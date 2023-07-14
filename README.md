@@ -1,5 +1,5 @@
 # Overview 
-This template provides users with a default set of issue templates and labels to work with.
+Test this pull request
 
 ## Issue Templates
 
