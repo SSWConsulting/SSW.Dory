@@ -1,18 +1,8 @@
 # Overview 
-This template provides users with a default set of issue templates and labels to work with.
+SSW.Dory is a solution to keep track of SharePoint files that have been checked out or GitHub Pull Requests that have not been merged. 
 
-## Issue Templates
+## Architecture Diagram
 
-To see the reasoning behind these issue templates see the rule:
-https://www.ssw.com.au/rules/github-issue-templates
-
-## Labels
-
-To see the reasoning behind these labels refer to the rule: 
-https://www.ssw.com.au/rules/labels-in-github
-
-To add the default labels to your repo use Labeler. See Luke Parker's repo for instructions on how to set it up https://github.com/Hona/LabelTemplateRepository#readme
-
-
+The solution is developed in Power Automate.
 
 ![alt text](https://github.com/SSWConsulting/SSW.Dory/blob/main/DORY%20(1).png)
