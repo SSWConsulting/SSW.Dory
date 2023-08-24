@@ -1,0 +1,34 @@
+---
+---
+
+@import "{{ site.theme }}";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+body {
+    color: #333333;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+a {
+    color: #CC4141;
+}
+
+header h1 {
+    color: #333333;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+a.button {
+    color: #CC4141;
+}
+
+h2,
+h4,
+h5,
+h6 {
+    color: #333333;
+}
+
+h3 {
+    color: #CC4141;
+}
