@@ -6,11 +6,14 @@ layout: default
 title: SSW Dory
 ---
 
-### About
-By identifying unchecked SharePoint pages and long-pending GitHub Pull Requests, Dory consolidates these potential blockers into a dedicated SharePoint list.   
+### Identify checked-out SharePoint pages
+![Example sharepoint list](./assets/img/old-sharepoint.png)
 
-And the best part? You don't have to worry about manual clean-up.   
+### View long-pending GitHub pull requests
+![Example sharepoint list](./assets/img/old-github.png)
 
-Each day, SSW.Dory refreshes this list, ensuring that it always presents the most current data, while outdated entries are automatically removed. 
+### Consolidate potential blockers into a dedicated SharePoint list
+![Example sharepoint list](./assets/img/sharepoint-list.png)
 
-With Dory, you're always a step ahead, working with the freshest information.
+### Send reminder emails to repeat offenders
+![Example email](./assets/img/github-email.png)
