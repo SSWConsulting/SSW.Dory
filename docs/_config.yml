@@ -22,7 +22,7 @@ title: SSW Dory
 description: >- # this means to ignore newlines until "baseurl:"
   SSW's intelligent workflow solution designed to streamline collaboration and reduce roadblocks in your daily operations.
 baseurl: "/SSW.Dory" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://sswdory.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 theme: jekyll-theme-tactile
