@@ -5,19 +5,22 @@
 layout: default
 title: SSW Dory
 ---
-![Example email SharePoint](./assets/img/email-sharepoint.png)
-***Figure: Example email sent out for SharePoint files***
+![Email SharePoint](./assets/img/email-sharepoint.png)
+***Figure: Example email sent out to remind users to check in their SharePoint files***
 
-![Example email GitHub](./assets/img/email-github.png)
-***Figure: Example email sent out for GitHub PRs***
+![Email GitHub](./assets/img/email-github.png)
+***Figure: Example email sent out to remid users to merge their open GitHub PRs***
 
 # How it works
 
+### Powered by Microsoft Power Automate
+![SSW.Dory Power Automate flow](./assets/img/dory-power-automate.png)
+
 ### Identify checked-out SharePoint pages
-![Example sharepoint list](./assets/img/old-sharepoint.png)
+![Checked out SharePoint file](./assets/img/old-sharepoint.png)
 
 ### View long-pending GitHub pull requests
-![Example sharepoint list](./assets/img/old-github.png)
+![Stale GitHub PR](./assets/img/old-github.png)
 
 ### Consolidate potential blockers into a dedicated SharePoint list
-![Example sharepoint list](./assets/img/sharepoint-list.png)
+![Sharepoint list](./assets/img/sharepoint-list.png)
