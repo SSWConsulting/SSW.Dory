@@ -9,13 +9,13 @@ title: SSW Dory
 ***Figure: Example email sent out to remind users to check in their SharePoint files***
 
 ![Email GitHub](./assets/img/email-github.png)
-***Figure: Example email sent out to remid users to merge their open GitHub PRs***
+***Figure: Example email sent out to remind users to merge their open GitHub PRs***
 
 # How it works
 
 ### Powered by Microsoft Power Automate
 ![SSW.Dory Power Automate flow](./assets/img/dory-power-automate.png)
-SSW Dory is a low-code solution developed in Power Automate. Each morning, the SSW Dory flow is triggered and run. It goes out and looks for SharePoint files that have not yet been checked back in or GitHub pull requests that have been open for more than a day and have not yet been merged. It then consolidates this information into a single SharePoint list for anyone to view and sends off email reminders to the relevent people. 
+SSW Dory is a low-code solution developed in Power Automate. Each morning, the SSW Dory flow is triggered and run. It goes out and looks for SharePoint files that have not yet been checked back in or GitHub pull requests that have not yet been merged. It then consolidates this information into a single SharePoint list for anyone to view and sends off email reminders to the relevent people. 
 
 ### Discover checked-out SharePoint pages
 ![Checked out SharePoint file](./assets/img/old-sharepoint.png)
@@ -23,7 +23,7 @@ SSW Dory uses the native SharePoint connection in Power Automate to find checked
 
 ### Identify long-pending GitHub pull requests
 ![Stale GitHub PR](./assets/img/old-github.png)
-SSW Dory uses the GitHub API to look for open Pull Requests in your GitHub repos. It then filters them for ones that have been open for longer than a day. 
+SSW Dory uses the GitHub API to look for open Pull Requests in your GitHub repos. It then filters them out for ones that have been open for longer than a certain period of time e.g., one day. 
 
 ### Consolidate these potential blockers into a dedicated SharePoint list
 ![Sharepoint list](./assets/img/sharepoint-list.png)
