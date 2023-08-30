@@ -20,7 +20,7 @@
 
 title: SSW Dory
 description: >- # this means to ignore newlines until "baseurl:"
-  A solution using Power Automate that automatically reminds users to check-in their SharePoint files and merge their open GitHub Pull Requests.
+  A low-code solution to automatically remind users to check-in their SharePoint files or merge their open GitHub Pull Requests.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sswdory.com" # the base hostname & protocol for your site, e.g. http://example.com
 
