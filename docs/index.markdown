@@ -5,9 +5,13 @@
 layout: default
 title: SSW Dory
 ---
-![Example email](./assets/img/github-email.png)
+![Example email SharePoint](./assets/img/email-sharepoint.png)
+***Figure: Example email sent out for SharePoint files***
 
-## How it works
+![Example email GitHub](./assets/img/email-github.png)
+***Figure: Example email sent out for GitHub PRs***
+
+# How it works
 
 ### Identify checked-out SharePoint pages
 ![Example sharepoint list](./assets/img/old-sharepoint.png)
