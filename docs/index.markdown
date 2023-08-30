@@ -5,6 +5,9 @@
 layout: default
 title: SSW Dory
 ---
+![Example email](./assets/img/github-email.png)
+
+## How it works
 
 ### Identify checked-out SharePoint pages
 ![Example sharepoint list](./assets/img/old-sharepoint.png)
@@ -14,6 +17,3 @@ title: SSW Dory
 
 ### Consolidate potential blockers into a dedicated SharePoint list
 ![Example sharepoint list](./assets/img/sharepoint-list.png)
-
-### Send reminder emails to repeat offenders
-![Example email](./assets/img/github-email.png)
