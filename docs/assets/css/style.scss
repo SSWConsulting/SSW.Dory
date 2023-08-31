@@ -16,6 +16,8 @@ a {
 header h1 {
     color: #333333;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 a.button {
