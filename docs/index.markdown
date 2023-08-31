@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: SSW Dory
+title: <img src="./assets/img/sswdory-logo.png" alt="SSW Dory Logo">
 ---
 ![Email SharePoint](./assets/img/email-sharepoint.png)
 ***Figure: Example email sent out to remind users to check in their SharePoint files***
