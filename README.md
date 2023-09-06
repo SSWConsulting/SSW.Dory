@@ -3,6 +3,7 @@ SSW.Dory is a solution to keep track of SharePoint files that have been checked 
 
 ## Architecture Diagram
 
-The solution is developed in Power Automate.
+![SSW Dory architecture diagram](./docs/assets/img/dory-architecture-diagram.png)
 
-![alt text](https://github.com/SSWConsulting/SSW.Dory/blob/main/DORY%20(1).png)
+The solution is developed in Power Automate.
+![Overview of SSW Dory Power Automate solution](./docs/assets/img/dory-power-automate-overview.png)
