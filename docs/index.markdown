@@ -14,7 +14,7 @@ title: <img src="./assets/img/sswdory-logo.png" alt="SSW Dory Logo">
 # How it works
 
 ### Powered by Microsoft Power Automate
-![SSW.Dory Power Automate flow](./assets/img/dory-power-automate.png)
+![SSW.Dory Power Automate flow](./assets/img/dory-architecture-diagram.png)
 SSW Dory is a low-code solution developed in Power Automate. Each morning, the SSW Dory flow is triggered and run. It goes out and looks for SharePoint files that have not yet been checked back in or GitHub pull requests that have not yet been merged. It then consolidates this information into a single SharePoint list for anyone to view and sends off email reminders to the relevent people. 
 
 ### Discover checked-out SharePoint pages
