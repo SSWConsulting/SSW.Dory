@@ -18,7 +18,7 @@ function MarketingCardText({ title, description }: MarketingCardTextProps) {
       <h1 className="title-font leading-tight sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
         {title}
       </h1>
-      <p className="mb-8 leading-relaxed">{description}</p>
+      <p className="mb-8 leading-relaxed max-w-xl">{description}</p>
     </div>
   );
 }
