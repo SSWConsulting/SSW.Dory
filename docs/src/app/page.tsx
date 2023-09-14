@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MarketingCard from "./marketingCard";
+import Footer from "./footer";
 
 export default function Home() {
   return (
@@ -65,6 +66,7 @@ export default function Home() {
           imgURL="/dory-architecture-diagram.svg"
         />
       </div>
+      <Footer/>
     </main>
   );
 }
