@@ -41,7 +41,7 @@ export default function Home() {
 
         <MarketingCard
           title="Identify unmerged GitHub pull requests"
-          description="SSW Dory uses the GitHub API to scan for any Pull Requests in your GitHub repos that have been open for longer than a certain period of time e.g., one day"
+          description="SSW Dory uses the GitHub API to scan for any Pull Requests in your GitHub repositories that have been open for longer than a certain period of time e.g., one day"
           imgURL="/old-github.png"
           reverse={true}
         />
@@ -53,7 +53,7 @@ export default function Home() {
         />
 
         <MarketingCard
-          title="Monitor your companie's workload"
+          title="Monitor your company's workload"
           description="A dedicated SharePoint site can be set up for SSW Dory to write to. Access this site for a consolidated view of how each employee is tracking"
           imgURL="/sharepoint-list.png"
           reverse={true}
