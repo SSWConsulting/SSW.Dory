@@ -44,8 +44,9 @@ jobs:
         with: 
           failOnStdErr: false
           template: ./bicep/deploy.bicep
-          resourceGroupName: ${{inputs.environment}}-web-datahub-auc2-rg
+          resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+          additionalparameters: "--what-if"
           parameters: >
               projectName=SSW.Dory 
               
