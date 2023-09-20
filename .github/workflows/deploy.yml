@@ -46,7 +46,7 @@ jobs:
           template: ./bicep/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
-          additionalparameters: "--what-if"
+          additionalArguments: "--what-if"
           parameters: >
               projectName=SSW.Dory 
 
