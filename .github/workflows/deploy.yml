@@ -39,7 +39,7 @@ jobs:
           tenant-id: ${{ env.TENANT_ID }}
           subscription-id: ${{ env.SUBSCRIPTION_ID }}
 
-      - name: Deploy Bicep
+      - name: Validate Bicep
         uses: azure/arm-deploy@v1
         with: 
           failOnStdErr: false
@@ -49,6 +49,16 @@ jobs:
           additionalparameters: "--what-if"
           parameters: >
               projectName=SSW.Dory 
+
+      - name: Deploy Bicep
+        uses: azure/arm-deploy@v1
+        with: 
+          failOnStdErr: false
+          template: ./bicep/deploy.bicep
+          resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
+          subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+          parameters: >
+            projectName=SSW.Dory 
               
 
 
