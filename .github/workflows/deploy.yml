@@ -43,7 +43,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with: 
           failOnStdErr: false
-          template: ./bicep/deploy.bicep
+          template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
           additionalArguments: "--what-if"
@@ -54,7 +54,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with: 
           failOnStdErr: false
-          template: ./bicep/deploy.bicep
+          template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
           parameters: >
