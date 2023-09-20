@@ -1,7 +1,9 @@
 
 param projectName string
-param lastDeploymentDate string
-param tags object
+param lastDeploymentDate string = utcNow()
+param tags object = {
+  Deployed:'yes'
+}
 
 param location string = 'australiaeast'
 
