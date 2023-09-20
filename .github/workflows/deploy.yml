@@ -1,0 +1,53 @@
+name: deploy
+
+  on: 
+    workflow_call:
+      inputs:
+        environment:
+          description: "Name of the environment to deploy to"
+          required: true
+          type: string
+permissions:
+  id-token: write
+  contents: read
+  checks: write
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  deploy-bicep:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+  
+  env:
+    AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP}}
+    CLIENT_ID: ${{ secrets.CLIENT_ID }}
+    TENANT_ID: ${{ secrets.TENANT_ID }}
+    SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        client-id: ${{ env.CLIENT_ID }}
+        tenant-id: ${{ env.TENANT_ID }}
+        subscription-id: ${{ env.SUBSCRIPTION_ID }}
+
+    - name: Validate Bicep
+      uses: azure/arm-deploy@v1
+      with:
+        resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
+        template: /infra/deploy.bicep
+        parameters: /infra/deploy.bicepparam
+        additionalArguments: "--what-if"
+
+
+      
+
+
+    
