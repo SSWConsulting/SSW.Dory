@@ -39,13 +39,16 @@ jobs:
           tenant-id: ${{ env.TENANT_ID }}
           subscription-id: ${{ env.SUBSCRIPTION_ID }}
 
-      - name: Validate Bicep
+      - name: Deploy Bicep
         uses: azure/arm-deploy@v1
-        with:
-          resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
-          template: /infra/deploy.bicep
-          parameters: /infra/deploy.bicepparam
-          additionalArguments: "--what-if"
+        with: 
+          failOnStdErr: false
+          template: ./bicep/deploy.bicep
+          resourceGroupName: ${{inputs.environment}}-web-datahub-auc2-rg
+          subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+          parameters: >
+              projectName=SSW.Dory 
+              
 
 
       
