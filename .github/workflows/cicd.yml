@@ -17,7 +17,7 @@ jobs:
   #   secrets: inherit
     
   deploy-prod:
-    uses: .github/workflows/deploy.yml
+    uses: ./.github/workflows/deploy.yml
     with: 
       environment: prod
     secrets: inherit
