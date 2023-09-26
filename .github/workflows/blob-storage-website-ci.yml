@@ -1,36 +1,58 @@
 name: Blob storage website CI
 
 on:
-    push:
-        branches: [ main ]
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+  checks: write
+
+defaults:
+  run:
+    shell: pwsh
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP}}
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      TENANT_ID: ${{ secrets.TENANT_ID }}
+      SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: azure/login@v1
-      with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Checkout Repo
+        uses: actions/checkout@v3
 
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 12
-    - run: npm run build
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ env.CLIENT_ID }}
+          tenant-id: ${{ env.TENANT_ID }}
+          subscription-id: ${{ env.SUBSCRIPTION_ID }}
 
-    - name: Upload to blob storage
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
+      - name: Build Nextjs
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm run build
+
+      - name: Upload to blob storage
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
             az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME> --auth-mode key -d '$web' -s .
-    - name: Purge CDN endpoint
-      uses: azure/CLI@v1
-      with:
-        inlineScript: |
-           az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
+      - name: Purge CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
 
-  # Azure logout
-    - name: logout
-      run: |
-            az logout
-      if: always()
+      # Azure logout
+      - name: logout
+        run: |
+          az logout
+        if: always()
