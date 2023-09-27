@@ -38,14 +38,14 @@ jobs:
         run: bun install
       - name: Build with Next.js
         run: bun run build
-      - name: Print Working Director
+      - name: Print Working Directory
         run: |
           pwd
           ls
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          path: ./out
+          path: ./docs/out
 
   # Deployment job
   # deploy:
