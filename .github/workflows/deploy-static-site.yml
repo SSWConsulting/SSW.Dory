@@ -26,9 +26,14 @@ jobs:
       SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
 
     steps:
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ env.CLIENT_ID }}
-          tenant-id: ${{ env.TENANT_ID }}
-          subscription-id: ${{ env.SUBSCRIPTION_ID }}
+        - name: Login to Azure
+          uses: azure/login@v1
+          with:
+            client-id: ${{ env.CLIENT_ID }}
+            tenant-id: ${{ env.TENANT_ID }}
+            subscription-id: ${{ env.SUBSCRIPTION_ID }}
+
+        - name: Download all workflow run artifacts
+          uses: actions/download-artifact@v3
+          with:
+            name: out
