@@ -1,16 +1,23 @@
 name: Deploy Next.js static site
 
-on: workflow_call
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: "Name of the environment to deploy to"
+        required: true
+        type: string
 
 # Sets permissions of the GITHUB_TOKEN
 permissions:
-  contents: read
-  checks: write
-  id-token: write
+    id-token: write
+    contents: read
+    checks: write
 
 jobs:
-  deploy:
+  deploy-site:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
 
     env:
       AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP}}
