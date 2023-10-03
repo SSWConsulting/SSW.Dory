@@ -22,7 +22,12 @@ jobs:
       environment: prod
     secrets: inherit
 
-  build-prod:
+  build-site-prod:
     uses: ./.github/workflows/build-static-site.yml
     secrets: inherit
+
+  deploy-site-prod:
+    uses: ./.github/workflows/deploy-static-site.yml
+    secrets: inherit
+    needs: build-site-prod
     
