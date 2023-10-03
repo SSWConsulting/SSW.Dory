@@ -24,7 +24,5 @@ jobs:
 
   build-prod:
     uses: ./.github/workflows/build-static-site.yml
-    with: 
-      environment: prod
     secrets: inherit
     
