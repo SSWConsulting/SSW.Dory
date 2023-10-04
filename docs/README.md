@@ -1,15 +1,26 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Architecture Overview
+[Add Architecture Diagram]
 
-First, run the development server:
+## Get Started
+
+Install the project's dependencies:
+
+```bash
+bun install
+```
+
+Run the project locally:
 
 ```bash
 bun run dev
 ```
 
-Open [http://localhost:8080](http://localhost:8080) with your browser to see the result.
+Build the project:
+```bash
+bun run build
+```
 
-You can start editing by modifying `app/page.tsx`.
-
-## Architecture Diagram
+## Local URLs
+[http://localhost:8080/](http://localhost:8080/): browse the website
