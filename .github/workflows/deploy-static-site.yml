@@ -38,14 +38,6 @@ jobs:
           with:
             name: out
 
-        - name: Print working directory
-          run: ls
-        
-        - name: Test azure cli
-          run: |
-            az --version
-            az storage blob list --account-name sswdory --container-name '$web'
-
         - name: Upload assets to Azure
           run: |
-            az storage blob upload-batch --account-name sswdory  --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --overwrite true --account-name sswdory  --auth-mode login -d '$web' -s .
