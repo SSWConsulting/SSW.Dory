@@ -33,16 +33,18 @@ jobs:
             tenant-id: ${{ env.TENANT_ID }}
             subscription-id: ${{ env.SUBSCRIPTION_ID }}
 
-        - name: Download all workflow run artifacts
-          uses: actions/download-artifact@v3
-          with:
-            name: out
+        # - name: Download all workflow run artifacts
+        #   uses: actions/download-artifact@v3
+        #   with:
+        #     name: out
 
         - name: Print working directory
           run: ls
 
-        - name: List blob storage
-          uses: azure/CLI@v1
-          with:
-            inlineScript: |
-              az storage blob list --account-name sswdory --auth-mode key -c '$web'
+        # - name: List blob storage
+        #   uses: azure/CLI@v1
+        #   with:
+        #     inlineScript: |
+        #       az storage blob list --account-name sswdory --auth-mode key -c '$web'
+        - run: |
+            az --version

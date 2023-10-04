@@ -21,14 +21,14 @@ jobs:
   #     environment: prod
   #   secrets: inherit
 
-  build-site-prod:
-    uses: ./.github/workflows/build-static-site.yml
-    secrets: inherit
+  # build-site-prod:
+  #   uses: ./.github/workflows/build-static-site.yml
+  #   secrets: inherit
 
   deploy-site-prod:
     uses: ./.github/workflows/deploy-static-site.yml
     with: 
       environment: prod
     secrets: inherit
-    needs: build-site-prod
+    # needs: build-site-prod
     
