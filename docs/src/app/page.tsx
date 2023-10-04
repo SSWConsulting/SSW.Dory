@@ -6,13 +6,15 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <nav className="bggrey w-full h-24 p-4 flex justify-center">
-        <Image
-          src="/sswdory-logo.png"
-          alt="SSW Dory Logo"
-          width={300}
-          height={40}
-          priority
-        />
+        <div className="w-3/5">
+          <Image
+            src="/sswdory-logo.png"
+            alt="SSW Dory Logo"
+            width={300}
+            height={40}
+            priority
+          />
+        </div>
       </nav>
       <div className="container mx-auto">
         <section className="text-gray-700 body-font">
@@ -66,7 +68,7 @@ export default function Home() {
           imgURL="/dory-architecture-diagram.svg"
         />
       </div>
-      <Footer/>
+      <Footer />
     </main>
   );
 }
