@@ -47,4 +47,6 @@ jobs:
         #     inlineScript: |
         #       az storage blob list --account-name sswdory --auth-mode key -c '$web'
         - run: |
+            az upgrade
             az --version
+            az storage blob list --account-name sswdory --container-name $web
