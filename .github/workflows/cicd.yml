@@ -2,7 +2,7 @@ name: CICD Pipeline
 
 on: 
   push: 
-    # branches: ["main"]
+    branches: ["main"]
     paths-ignore:
       - .gitignore
   
@@ -15,11 +15,11 @@ jobs:
   #     environment: dev
   #   secrets: inherit
     
-  # deploy-prod:
-  #   uses: ./.github/workflows/deploy.yml
-  #   with: 
-  #     environment: prod
-  #   secrets: inherit
+  deploy-prod:
+    uses: ./.github/workflows/deploy.yml
+    with: 
+      environment: prod
+    secrets: inherit
 
   build-site:
     uses: ./.github/workflows/build-static-site.yml
