@@ -33,21 +33,19 @@ jobs:
             tenant-id: ${{ env.TENANT_ID }}
             subscription-id: ${{ env.SUBSCRIPTION_ID }}
 
-        # - name: Download all workflow run artifacts
-        #   uses: actions/download-artifact@v3
-        #   with:
-        #     name: out
+        - name: Download all workflow run artifacts
+          uses: actions/download-artifact@v3
+          with:
+            name: out
 
         - name: Print working directory
           run: ls
-
-        # - name: List blob storage
-        #   uses: azure/CLI@v1
-        #   with:
-        #     inlineScript: |
-        #       az storage blob list --account-name sswdory --auth-mode key -c '$web'
         
         - name: Test azure cli
           run: |
             az --version
             az storage blob list --account-name sswdory --container-name '$web'
+
+        - name: Upload assets to Azure
+          run: |
+            az storage blob upload-batch --account-name sswdory  --auth-mode key -d '$web' -s .
