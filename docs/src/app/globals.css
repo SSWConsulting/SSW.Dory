@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+*, ::before, ::after {
+  border-style: none;
+}
+ 
+html {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+.bggrey {
+  background-color: #e9e9e9;
+}
+
+.bordered {
+  border: 10px solid #eee;
+  outline: 1px solid #ccc;
+}
+
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+}
+
+.bg-grey-translucent {
+  background-color: hsla(0, 0%, 40%, 0.1);
+}
+
+.text-ssw-red {
+  --tw-text-opacity: 1;
+  color: rgb(204 65 65 / var(--tw-text-opacity));
+}
+
+a.footer-link,a.footer-link:visited  {
+  @apply text-white;
+  line-height: .75rem;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    @apply text-ssw-red;
+  }
+}
+
+a.footer-greybar-link, a.footer-greybar-link:hover {
+  text-decoration: underline;
+}
+
+footer {
+  color: #9e9e9e;
+  font-size: 0.75rem;
+}
+
+.social-media-icon {
+  color: #fff;
+  display: block;
+  float: right;
+  height: 25px;
+  text-decoration: none;
+  text-align: center;
+  width: 25px;
+  margin-left: 8px;
+  line-height: 25px;
+}

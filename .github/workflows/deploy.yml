@@ -1,0 +1,68 @@
+name: deploy
+
+on: 
+  workflow_call:
+    inputs:
+      environment:
+        description: "Name of the environment to deploy to"
+        required: true
+        type: string
+
+permissions:
+  id-token: write
+  contents: read
+  checks: write
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  deploy-bicep:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+  
+    env:
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP}}
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      TENANT_ID: ${{ secrets.TENANT_ID }}
+      SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ env.CLIENT_ID }}
+          tenant-id: ${{ env.TENANT_ID }}
+          subscription-id: ${{ env.SUBSCRIPTION_ID }}
+
+      - name: Validate Bicep
+        uses: azure/arm-deploy@v1
+        with: 
+          failOnStdErr: false
+          template: infra/deploy.bicep
+          resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
+          subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+          additionalArguments: "--what-if"
+          parameters: >
+              projectName=SSW.Dory 
+
+      - name: Deploy Bicep
+        uses: azure/arm-deploy@v1
+        with: 
+          failOnStdErr: false
+          template: infra/deploy.bicep
+          resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
+          subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+          parameters: >
+            projectName=SSW.Dory 
+              
+
+
+      
+
+
+    

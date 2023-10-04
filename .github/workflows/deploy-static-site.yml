@@ -1,0 +1,47 @@
+name: Deploy Next.js static site
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: "Name of the environment to deploy to"
+        required: true
+        type: string
+
+# Sets permissions of the GITHUB_TOKEN
+permissions:
+    id-token: write
+    contents: read
+    checks: write
+
+jobs:
+  deploy-site:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
+    env:
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP}}
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      TENANT_ID: ${{ secrets.TENANT_ID }}
+      SUBSCRIPTION_ID: ${{ secrets.SUBSCRIPTION_ID }}
+
+    steps:
+        - name: Login to Azure
+          uses: azure/login@v1
+          with:
+            client-id: ${{ env.CLIENT_ID }}
+            tenant-id: ${{ env.TENANT_ID }}
+            subscription-id: ${{ env.SUBSCRIPTION_ID }}
+
+        - name: Download all workflow run artifacts
+          uses: actions/download-artifact@v3
+          with:
+            name: out
+
+        - name: Clean out old assets in Azure
+          run: |
+            az storage blob delete-batch --account-name sswdory -s '$web'
+
+        - name: Upload new assets to Azure
+          run: |
+            az storage blob upload-batch --overwrite true --account-name sswdory -d '$web' -s .
