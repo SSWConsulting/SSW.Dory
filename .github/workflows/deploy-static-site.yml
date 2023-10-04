@@ -46,6 +46,8 @@ jobs:
         #   with:
         #     inlineScript: |
         #       az storage blob list --account-name sswdory --auth-mode key -c '$web'
-        - run: |
+        
+        - name: Test azure cli
+          run: |
             az --version
-            az storage blob list --account-name sswdory --container-name $web
+            az storage blob list --account-name sswdory --container-name '$web'
