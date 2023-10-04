@@ -40,3 +40,9 @@ jobs:
 
         - name: Print working directory
           run: ls
+
+        - name: List blob storage
+          uses: azure/CLI@v1
+          with:
+            inlineScript: |
+              az storage blob list --account-name sswdory --auth-mode key -c '$web'
