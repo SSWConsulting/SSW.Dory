@@ -38,6 +38,10 @@ jobs:
           with:
             name: out
 
+        - name: Clean out old assets in Azure
+          run: |
+            az storage blob delete-batch --account-name sswdory -s '$web'
+
         - name: Upload assets to Azure
           run: |
-            az storage blob upload-batch --overwrite true --account-name sswdory  --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --overwrite true --account-name sswdory -d '$web' -s .
