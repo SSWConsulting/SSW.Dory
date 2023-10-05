@@ -26,7 +26,7 @@ jobs:
     with: 
       environment: prod
     secrets: inherit
-    needs: build-site
+    needs: deploy-staging
 
 
   
