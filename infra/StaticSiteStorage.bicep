@@ -2,7 +2,7 @@
 @minLength(3)
 @maxLength(21)
 param appName string
-
+param environment string
 param location string
 
 @allowed([
@@ -22,7 +22,7 @@ param tags object
 
 
 resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
-  name: replace(replace(replace(toLower(take('${appName}', 24)), '-', ''), '_', ''),'.','')
+  name: replace(replace(replace(toLower(take('${environment}-${appName}', 24)), '-', ''), '_', ''),'.','')
   location: location
   kind: 'StorageV2'
   tags: tags
