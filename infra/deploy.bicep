@@ -18,3 +18,5 @@ module staticSiteStorage 'StaticSiteStorage.bicep' = {
     tags: tags
   }
 }
+
+output websiteStorageAccountName string = staticSiteStorage.name
