@@ -21,7 +21,8 @@ jobs:
   deploy-bicep:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
-  
+    outputs:
+      storageName: ${{steps.deploy-bicep.outputs.websiteStorageAccountName}}
     env:
       AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP}}
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -46,20 +47,28 @@ jobs:
           template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+          scope: resourceGroup
           additionalArguments: "--what-if"
-          parameters: >
-              projectName=SSW.Dory 
+          parameters: projectName=SSW.Dory environment=${{inputs.environment}} 
 
       - name: Deploy Bicep
+        id: deploy-bicep
         uses: azure/arm-deploy@v1
         with: 
           failOnStdErr: false
           template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
-          parameters: >
-            projectName=SSW.Dory 
-              
+          scope: resourceGroup
+          parameters: projectName=SSW.Dory environment=${{inputs.environment}} 
+  
+  deploy-site-prod:
+    uses: ./.github/workflows/deploy-static-site.yml
+    with: 
+      environment: ${{inputs.environment}}
+      storageName: ${{needs.deploy-bicep.outputs.storageName}}
+    secrets: inherit
+    needs: deploy-bicep
 
 
       
