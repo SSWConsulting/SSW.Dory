@@ -41,10 +41,14 @@ resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   }
 }
 
-
+resource blob 'Microsoft.Storage/storageAccounts/blobServices@2023-01-01' = {
+  name: 'default'
+  parent: staticSiteStorage
+}
 
 resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-06-01' = {
-  name: '${staticSiteStorage.name}/default/$web'
+  parent: blob
+  name: '$web'
   properties: {
     publicAccess: 'None'
   }
