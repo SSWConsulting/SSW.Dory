@@ -47,7 +47,7 @@ jobs:
           template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
-          scope: resourceGroup
+          scope: resourcegroup
           additionalArguments: "--what-if"
           parameters: projectName=SSW.Dory environment=${{inputs.environment}} 
 
@@ -59,7 +59,7 @@ jobs:
           template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
-          scope: resourceGroup
+          scope: resourcegroup
           parameters: projectName=SSW.Dory environment=${{inputs.environment}} 
   
   deploy-site-prod:
