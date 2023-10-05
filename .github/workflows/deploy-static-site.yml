@@ -49,3 +49,7 @@ jobs:
         - name: Upload new assets to Azure
           run: |
             az storage blob upload-batch --overwrite true --account-name ${{inputs.StorageName}} -d '$web' -s .
+        
+        - name: Enable static Site
+          run: |
+            az storage blob service-properties update --account-name ${{inputs.StorageName}} --static-website --404-document index.html --index-document index.html
