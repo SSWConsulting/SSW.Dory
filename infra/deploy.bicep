@@ -19,4 +19,4 @@ module staticSiteStorage 'StaticSiteStorage.bicep' = {
   }
 }
 
-output websiteStorageAccountName string = staticSiteStorage.name
+output websiteStorageAccountName string = staticSiteStorage.outputs.websiteStorageAccountName
