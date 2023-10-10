@@ -20,13 +20,23 @@ jobs:
       environment: staging
     secrets: inherit
     needs: build-site
+  
+  approval-gate:
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    environment: "prod-approval"
+    steps:
+      - name: Approved
+        shell: bash
+        run: |
+          echo "Approved for Prod"
 
   deploy-prod:
     uses: ./.github/workflows/deploy.yml
     with: 
       environment: prod
     secrets: inherit
-    needs: deploy-staging
+    needs: approval-gate
 
 
   
