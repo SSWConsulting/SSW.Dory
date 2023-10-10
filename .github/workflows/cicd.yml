@@ -27,7 +27,7 @@ jobs:
     environment: "prod-approval"
     concurrency:
       cancel-in-progress: true
-      group: pp-approval
+      group: prod-approval
     steps:
       - name: Approved
         shell: bash
