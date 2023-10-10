@@ -7,6 +7,10 @@ on:
         description: "Name of the environment to deploy to"
         required: true
         type: string
+      storageName:
+        description: "The Name for the StorageAccount"
+        required: true
+        type: string
 
 # Sets permissions of the GITHUB_TOKEN
 permissions:
@@ -40,8 +44,12 @@ jobs:
 
         - name: Clean out old assets in Azure
           run: |
-            az storage blob delete-batch --account-name sswdory -s '$web'
+            az storage blob delete-batch --account-name ${{inputs.StorageName}} -s '$web'
 
         - name: Upload new assets to Azure
           run: |
-            az storage blob upload-batch --overwrite true --account-name sswdory -d '$web' -s .
+            az storage blob upload-batch --overwrite true --account-name ${{inputs.StorageName}} -d '$web' -s .
+        
+        - name: Enable static Site
+          run: |
+            az storage blob service-properties update --account-name ${{inputs.StorageName}} --static-website --404-document index.html --index-document index.html

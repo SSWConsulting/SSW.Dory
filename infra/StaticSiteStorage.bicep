@@ -2,7 +2,7 @@
 @minLength(3)
 @maxLength(21)
 param appName string
-
+param environment string
 param location string
 
 @allowed([
@@ -22,7 +22,7 @@ param tags object
 
 
 resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
-  name: replace(replace(replace(toLower(take('${appName}', 24)), '-', ''), '_', ''),'.','')
+  name: replace(replace(replace(toLower(take('${environment}-${appName}', 24)), '-', ''), '_', ''),'.','')
   location: location
   kind: 'StorageV2'
   tags: tags
@@ -41,10 +41,14 @@ resource staticSiteStorage 'Microsoft.Storage/storageAccounts@2019-06-01' = {
   }
 }
 
-
+resource blob 'Microsoft.Storage/storageAccounts/blobServices@2023-01-01' = {
+  name: 'default'
+  parent: staticSiteStorage
+}
 
 resource webContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-06-01' = {
-  name: '${staticSiteStorage.name}/default/$web'
+  parent: blob
+  name: '$web'
   properties: {
     publicAccess: 'None'
   }
