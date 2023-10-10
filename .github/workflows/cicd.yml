@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy-staging
     environment: "prod-approval"
+    concurrency:
+      cancel-in-progress: true
+      group: prod-approval
     steps:
       - name: Approved
         shell: bash
