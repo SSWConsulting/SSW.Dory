@@ -65,7 +65,7 @@ export default function Home() {
         <MarketingCard
           title="Powered by Microsoft Power Automate"
           description="A low-code solution for easy set-up and configuration"
-          imgURL="/dory-architecture-diagram.svg"
+          imgURL="/dory-architecture-diagram.webp"
         />
       </div>
       <Footer />
