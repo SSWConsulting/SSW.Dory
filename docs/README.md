@@ -1,7 +1,7 @@
 # SSW.Dory Landing Page
 
 ## Architecture Overview
-![SSW Dory architecture diagram](./public/dory-website-architecture-diagram.svg)
+![SSW Dory architecture diagram](./public/dory-website-architecture-diagram.png)
 
 ## Get Started
 
