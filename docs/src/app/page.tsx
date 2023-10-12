@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <nav className="bggrey w-full h-24 p-4 flex justify-center">
-        <div className="w-3/5">
+        <div className="w-full">
           <Image
             src="/sswdory-logo.png"
             alt="SSW Dory Logo"
