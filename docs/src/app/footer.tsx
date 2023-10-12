@@ -30,8 +30,15 @@ export default function Footer() {
           <div className="xl:mx-6">
             <div className="mx-6 flex flex-col-reverse md:flex-row justify-between align-middle leading-6">
               <div className="py-2">
-                Copyright © SSW 1990 - {new Date().getFullYear()}. All Rights
-                Reserved.
+                Copyright © {" "}
+                <a
+                  className="footer-link"
+                  href="https://www.ssw.com.au/"
+                  target="_blank"
+                >
+                  SSW
+                </a>
+                {" "} 1990 - {new Date().getFullYear()}. All Rights Reserved.
               </div>
               <div className="w-full md:w-3/6 md:text-right py-2">
                 <a

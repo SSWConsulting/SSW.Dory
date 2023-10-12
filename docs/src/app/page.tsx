@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <nav className="bggrey w-full h-24 p-4 flex justify-center">
-        <div className="w-3/5">
+        <div className="w-full">
           <Image
             src="/sswdory-logo.png"
             alt="SSW Dory Logo"
@@ -20,7 +20,7 @@ export default function Home() {
         <section className="text-gray-700 body-font">
           <div className="container mx-auto flex px-5 py-20 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
-              <h1 className="title-font leading-tight sm:text-4xl text-3xl mb-10 font-medium text-gray-900">
+              <h1 className="title-font leading-tight sm:text-5xl text-4xl mb-10 font-semibold text-gray-900">
                 Check out our Github
               </h1>
             </div>
