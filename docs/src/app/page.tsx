@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import MarketingCard from "./marketingCard";
 import Footer from "./footer";
 
@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center">
       <nav className="bggrey w-full h-24 p-4 flex justify-center">
         <div className="w-full">
-          <Image
+          <ExportedImage
             src="/sswdory-logo.png"
             alt="SSW Dory Logo"
             width={300}
@@ -25,7 +25,7 @@ export default function Home() {
               </h1>
             </div>
             <a href="https://github.com/SSWConsulting/SSW.Dory" target="_blank">
-              <Image
+              <ExportedImage
                 src="/github-mark.svg"
                 alt="Invertocat Logo"
                 width={100}
