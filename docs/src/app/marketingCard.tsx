@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 type MarketingCardTextProps = {
   title: string;
@@ -37,7 +37,7 @@ export default function MarketingCard({
         )}
         <div className="md:w-1/2 w-5/6 mb-10 md:mb-0">
           <a href={imgURL} target="_blank">
-            <Image
+            <ExportedImage
               className="object-cover object-center rounded bordered"
               alt="hero"
               src={imgURL}
