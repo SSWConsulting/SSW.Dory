@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "bun run build && bun run start",
-    "build": "next build && next-image-export-optimizer",
+    "build": "next build",
     "start": "http-server ./out",
     "lint": "next lint"
   },
