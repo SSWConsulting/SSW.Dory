@@ -26,6 +26,7 @@ jobs:
       - name: Print working directory
         run: |
           pwd
+          ls
 
       - name: Install dependencies
         run: bun install
