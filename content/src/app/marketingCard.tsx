@@ -1,5 +1,9 @@
 import ExportedImage from "next-image-export-optimizer";
 
+type MarketingCardImageProps = {
+  imgURL: string;
+};
+
 type MarketingCardTextProps = {
   title: string;
   description: string;
@@ -14,12 +18,26 @@ type MarketingCardProps = {
 
 function MarketingCardText({ title, description }: MarketingCardTextProps) {
   return (
-    <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+    <div className="lg:flex-grow flex flex-col md:items-start md:text-left items-center text-center">
       <h2 className="title-font leading-tight sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
         {title}
       </h2>
       <h3 className="mb-8 leading-relaxed max-w-xl">{description}</h3>
     </div>
+  );
+}
+
+function MarketingCardImage({ imgURL }: MarketingCardImageProps) {
+  return (
+      <a href={imgURL} target="_blank">
+        <ExportedImage
+          className="object-cover object-center rounded bordered"
+          alt="hero"
+          src={imgURL}
+          width={620}
+          height={400}
+        />
+      </a>
   );
 }
 
@@ -32,23 +50,20 @@ export default function MarketingCard({
   return (
     <section className="text-gray-700 body-font">
       <div className="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
-        {!reverse && (
-          <MarketingCardText title={title} description={description} />
-        )}
-        <div className="md:w-1/2 w-5/6 mb-10 md:mb-0">
-          <a href={imgURL} target="_blank">
-            <ExportedImage
-              className="object-cover object-center rounded bordered"
-              alt="hero"
-              src={imgURL}
-              width={620}
-              height={400}
-            />
-          </a>
+        <div className="mr-8 md:w-1/2 mb-10 md:mb-0">
+          {reverse ? (
+            <MarketingCardImage imgURL={imgURL} />
+          ) : (
+            <MarketingCardText title={title} description={description} />
+          )}
         </div>
-        {reverse && (
-          <MarketingCardText title={title} description={description} />
-        )}
+        <div className="md:w-1/2 w-5/6 mb-10 md:mb-0">
+          {reverse ? (
+            <MarketingCardText title={title} description={description} />
+          ) : (
+            <MarketingCardImage imgURL={imgURL} />
+          )}
+        </div>
       </div>
     </section>
   );
