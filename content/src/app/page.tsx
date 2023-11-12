@@ -38,33 +38,33 @@ export default function Home() {
 
         <MarketingCard
           title="Discover checked-out SharePoint pages"
-          description="Connect SSW Dory to your SharePoint site and find any pages that have been left checked-out"
+          description="Connect SSW Dory to your SharePoint site and find any pages that have been left checked-out."
           imgURL="/old-sharepoint.png"
         />
 
         <MarketingCard
           title="Identify unmerged GitHub pull requests"
-          description="SSW Dory uses the GitHub API to scan for any Pull Requests in your GitHub repositories that have been open for longer than a certain period of time e.g., one day"
+          description="SSW Dory uses the GitHub API to scan for any Pull Requests in your GitHub repositories that have been open for longer than a certain period of time e.g., one day."
           imgURL="/old-github.png"
           reverse={true}
         />
 
         <MarketingCard
           title="Automatically send out reminder emails"
-          description="SSW Dory will send out emails to the relevent people who have left a SharePoint page checked-out or a GitHub PR open for too long"
+          description="SSW Dory will send out emails to the relevent people who have left a SharePoint page checked-out or a GitHub PR open for too long."
           imgURL="/email-github.png"
         />
 
         <MarketingCard
           title="Monitor your company's workload"
-          description="A dedicated SharePoint site can be set up for SSW Dory to write to. Access this site for a consolidated view of how each employee is tracking"
+          description="A dedicated SharePoint site can be set up for SSW Dory to write to. Access this site for a consolidated view of how each employee is tracking."
           imgURL="/sharepoint-list.png"
           reverse={true}
         />
 
         <MarketingCard
           title="Powered by Microsoft Power Automate"
-          description="A low-code solution for easy set-up and configuration"
+          description="A low-code solution for easy set-up and configuration."
           imgURL="/dory-architecture-diagram.webp"
         />
       </div>

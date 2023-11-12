@@ -13,7 +13,7 @@ import {
 export default function Footer() {
   return (
     <>
-      <div className="py-2 text-center bg-grey-translucent text-sm w-full">
+      <div className="py-2 text-center bg-grey-translucent text-sm w-full mt-20">
         <section className="main-container">
           We <FontAwesomeIcon icon={faHeart} className="text-ssw-red" /> open
           source. Powered by{" "}
