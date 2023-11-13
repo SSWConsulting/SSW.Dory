@@ -1,6 +1,6 @@
 name: deploy
 
-on: 
+on:
   workflow_call:
     inputs:
       environment:
@@ -42,29 +42,35 @@ jobs:
 
       - name: Validate Bicep
         uses: azure/arm-deploy@v1
-        with: 
+        with:
           failOnStdErr: false
           template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
           scope: resourcegroup
           additionalArguments: "--what-if"
-          parameters: projectName=SSW.Dory environment=${{inputs.environment}} 
+          parameters: projectName=SSW.Dory environment=${{inputs.environment}}
 
       - name: Deploy Bicep
         id: deploy-bicep
         uses: azure/arm-deploy@v1
-        with: 
+        with:
           failOnStdErr: false
           template: infra/deploy.bicep
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
           scope: resourcegroup
-          parameters: projectName=SSW.Dory environment=${{inputs.environment}} 
-  
+          parameters: projectName=SSW.Dory environment=${{inputs.environment}}
+
+      - name: Staging Preview Url
+        if: ${{ inputs.environment == 'staging' }}
+        run: |
+          echo "## Staging Preview Url" >> $GITHUB_STEP_SUMMARY
+          echo "https://staging.sswdory.com" >> $GITHUB_STEP_SUMMARY
+
   deploy-site-prod:
     uses: ./.github/workflows/deploy-static-site.yml
-    with: 
+    with:
       environment: ${{inputs.environment}}
       storageName: ${{needs.deploy-bicep.outputs.storageName}}
     secrets: inherit
