@@ -49,7 +49,7 @@ export default function MarketingCard({
 }: MarketingCardProps) {
   return (
     <section className="text-gray-700 body-font">
-      <div className="container mx-auto my-10 flex px-5 py-10 md:flex-row flex-col items-center">
+      <div className="container mx-auto mb-32 flex px-5 py-10 md:flex-row flex-col items-center">
         <div className="mr-8 md:w-1/2 md:mb-0">
           {reverse ? (
             <MarketingCardImage imgURL={imgURL} />
