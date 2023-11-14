@@ -7,6 +7,10 @@ on:
         description: "Name of the environment to deploy to"
         required: true
         type: string
+      url:
+        description: "URL of the site"
+        required: false
+        type: string
 
 permissions:
   id-token: write
@@ -20,7 +24,9 @@ defaults:
 jobs:
   deploy-bicep:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: 
+      name: ${{ inputs.environment }}
+      url: ${{ inputs.url }}
     outputs:
       storageName: ${{steps.deploy-bicep.outputs.websiteStorageAccountName}}
     env:
