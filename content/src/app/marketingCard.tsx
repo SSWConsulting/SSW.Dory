@@ -22,7 +22,7 @@ function MarketingCardText({ title, description }: MarketingCardTextProps) {
       <h2 className="title-font leading-tight sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
         {title}
       </h2>
-      <h3 className="mb-8 leading-relaxed max-w-xl">{description}</h3>
+      <h3 className="leading-relaxed max-w-xl">{description}</h3>
     </div>
   );
 }
@@ -49,15 +49,15 @@ export default function MarketingCard({
 }: MarketingCardProps) {
   return (
     <section className="text-gray-700 body-font">
-      <div className="container mx-auto flex px-5 py-10 md:flex-row flex-col items-center">
-        <div className="mr-8 md:w-1/2 mb-10 md:mb-0">
+      <div className="container mx-auto mb-32 md:mb-0 flex px-5 py-10 md:flex-row flex-col items-center">
+        <div className="md:mr-8 md:w-1/2 md:mb-0 mb-10">
           {reverse ? (
             <MarketingCardImage imgURL={imgURL} />
           ) : (
             <MarketingCardText title={title} description={description} />
           )}
         </div>
-        <div className="md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <div className="md:w-1/2 w-5/6 md:mb-0">
           {reverse ? (
             <MarketingCardText title={title} description={description} />
           ) : (
