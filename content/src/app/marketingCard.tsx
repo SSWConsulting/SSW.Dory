@@ -50,7 +50,7 @@ export default function MarketingCard({
   return (
     <section className="text-gray-700 body-font">
       <div className="container mx-auto mb-32 md:mb-0 flex px-5 py-10 md:flex-row flex-col items-center">
-        <div className="mr-8 md:w-1/2 md:mb-0">
+        <div className="md:mr-8 md:w-1/2 md:mb-0 mb-10">
           {reverse ? (
             <MarketingCardImage imgURL={imgURL} />
           ) : (
