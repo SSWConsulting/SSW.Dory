@@ -5,6 +5,12 @@
 
 ## Get Started
 
+### Navigate to website code:
+
+```bash
+cd content
+```
+
 ### Install the project's dependencies:
 
 ```bash
