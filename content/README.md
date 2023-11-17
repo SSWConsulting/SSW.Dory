@@ -1,4 +1,9 @@
-# SSW.Dory Landing Page
+# SSW.Dory Website
+
+## See the Important Documents
+
+- [Instructions - Compile (F5 Experience)](https://github.com/SSWConsulting/SSW.Dory/wiki/Instructions-Compile-(F5-Experience))
+- [Instructions - Deployment](https://github.com/SSWConsulting/SSW.Dory/wiki/Instructions-Deployment)
 
 ## Architecture Overview
 ![SSW Dory architecture diagram](../docs/images/dory-website-architecture-diagram.webp)
