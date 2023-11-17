@@ -21,7 +21,7 @@ export default function Home() {
           <div className="container mx-auto mb-32 md:mb-0 flex px-5 py-10 items-center justify-center flex-col">
             <div className="text-center lg:w-2/3 w-full">
               <h1 className="title-font leading-tight sm:text-5xl text-4xl mb-10 font-semibold text-gray-900">
-                Check out our Github
+                This project is on GitHub
               </h1>
             </div>
             <a href="https://github.com/SSWConsulting/SSW.Dory" target="_blank">
@@ -33,6 +33,11 @@ export default function Home() {
                 priority
               />
             </a>
+            <div className="lg:flex-grow flex flex-col md:items-start md:text-left items-center text-center">
+              <h3 className="leading-relaxed max-w-xl mt-10">
+                Be informed before someone tells you they&apos;re blocked.
+              </h3>
+            </div>
           </div>
         </section>
 
@@ -44,20 +49,20 @@ export default function Home() {
 
         <MarketingCard
           title="Identify unmerged GitHub pull requests"
-          description="SSW Dory uses the GitHub API to scan for any Pull Requests in your GitHub repositories that have been open for longer than a certain period of time e.g., one day."
+          description="SSW Dory uses the GitHub API to scan for any Pull Requests in your GitHub repositories that have been open for longer than a certain period of time e.g. one day."
           imgURL="/old-github.png"
           reverse={true}
         />
 
         <MarketingCard
-          title="Automatically send out reminder emails"
+          title="Friendly reminder emails"
           description="SSW Dory will send out emails to the relevent people who have left a SharePoint page checked-out or a GitHub PR open for too long."
           imgURL="/email-github.png"
         />
 
         <MarketingCard
-          title="Monitor your company's workload"
-          description="A dedicated SharePoint site can be set up for SSW Dory to write to. Access this site for a consolidated view of how each employee is tracking."
+          title="Piece of mind from a portal"
+          description="The SharePoint site shows you the current offenders."
           imgURL="/sharepoint-list.png"
           reverse={true}
         />
