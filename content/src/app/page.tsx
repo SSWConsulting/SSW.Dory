@@ -61,7 +61,7 @@ export default function Home() {
         />
 
         <MarketingCard
-          title="Piece of mind from a portal for managers"
+          title="Peace of mind from a portal for managers"
           description="The SharePoint site shows you the current offenders."
           imgURL="/sharepoint-list.png"
           reverse={true}
