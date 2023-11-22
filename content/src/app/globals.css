@@ -8,12 +8,14 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   border-style: none;
 }
- 
+
 html {
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -39,21 +41,29 @@ body {
   background-color: hsla(0, 0%, 40%, 0.1);
 }
 
+.bg-ssw-red,
+.bg-sswRed {
+  --tw-bg-opacity: 1;
+  background-color: rgb(204 65 65 / var(--tw-bg-opacity));
+}
+
 .text-ssw-red {
   --tw-text-opacity: 1;
   color: rgb(204 65 65 / var(--tw-text-opacity));
 }
 
-a.footer-link,a.footer-link:visited  {
+a.footer-link,
+a.footer-link:visited {
   @apply text-white;
-  line-height: .75rem;
+  line-height: 0.75rem;
   transition: all 0.3s ease-in-out;
   &:hover {
     @apply text-ssw-red;
   }
 }
 
-a.footer-greybar-link, a.footer-greybar-link:hover {
+a.footer-greybar-link,
+a.footer-greybar-link:hover {
   text-decoration: underline;
 }
 
