@@ -53,6 +53,14 @@ export default function Home() {
                 Be informed before someone tells you they&apos;re blocked
               </h1>
             </div>
+            <iframe
+              className="max-w-full"
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/R2-2icVTie0?si=rT5o62WawDZKDTW5"
+              title="SSWDory Done Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
           </div>
         </section>
 
