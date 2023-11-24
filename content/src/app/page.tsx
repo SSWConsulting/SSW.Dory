@@ -76,11 +76,11 @@ export default function Home() {
         <section className="text-gray-700 body-font">
           <div className="container mx-auto mb-32 md:mb-0 flex px-5 py-10 items-center justify-center flex-col">
             <h2 className="title-font leading-tight sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              Sold?
+              I&apos;m keen!
             </h2>
             <a href="https://www.ssw.com.au/company/contact-us" target="_blank">
               <button className="overflow-hidden border-none py-3 px-10 text-[1.6rem] bg-sswRed text-white rounded">
-                Contact Us
+                CONTACT US
               </button>
             </a>
             <h3 className="leading-relaxed max-w-xs mt-4 text-center">Contact an Account Manager to discuss how we can set this up for you.</h3>
