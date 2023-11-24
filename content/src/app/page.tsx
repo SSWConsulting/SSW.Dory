@@ -1,12 +1,25 @@
 import ExportedImage from "next-image-export-optimizer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import MarketingCard from "./marketingCard";
 import Footer from "./footer";
+
+function ContactButton() {
+  return (
+    <a href="https://www.ssw.com.au/company/contact-us" target="_blank">
+      <button className="overflow-hidden border-none py-3 px-5 text-[1.6rem] bg-sswRed text-white rounded">
+        <FontAwesomeIcon icon={faPhone} />
+        <span className="ml-2">CONTACT US</span>
+      </button>
+    </a>
+  );
+}
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
       <nav className="bggrey w-full h-24 p-4 flex justify-center">
-        <div className="w-full">
+        <div className="w-full flex justify-between">
           <ExportedImage
             src="/sswdory-logo.png"
             alt="SSW Dory Logo"
@@ -14,6 +27,7 @@ export default function Home() {
             height={40}
             priority
           />
+          <ContactButton />
         </div>
       </nav>
       <div className="container mx-auto">
@@ -78,11 +92,7 @@ export default function Home() {
             <h2 className="title-font leading-tight sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               I&apos;m keen!
             </h2>
-            <a href="https://www.ssw.com.au/company/contact-us" target="_blank">
-              <button className="overflow-hidden border-none py-3 px-10 text-[1.6rem] bg-sswRed text-white rounded">
-                CONTACT US
-              </button>
-            </a>
+            <ContactButton />
             <h3 className="leading-relaxed max-w-xs mt-4 text-center">
               Contact an Account Manager to discuss how we can set this up for
               you.
