@@ -42,15 +42,15 @@ export default function Home() {
         </section>
 
         <MarketingCard
-          title="Remind users of their checked-out SharePoint pages"
-          description="Connect SSW Dory to your SharePoint site and find any pages that have been left checked-out."
-          imgURL="/old-sharepoint.png"
-        />
-
-        <MarketingCard
           title="Remind users of their unmerged GitHub pull requests"
           description="SSW Dory uses the GitHub API to scan for any Pull Requests in your GitHub repositories that have been open for longer than a certain period of time e.g. one day."
           imgURL="/old-github.png"
+        />
+
+        <MarketingCard
+          title="Remind users of their checked-out SharePoint pages"
+          description="Connect SSW Dory to your SharePoint site and find any pages that have been left checked-out."
+          imgURL="/old-sharepoint.png"
           reverse={true}
         />
 
@@ -83,7 +83,10 @@ export default function Home() {
                 CONTACT US
               </button>
             </a>
-            <h3 className="leading-relaxed max-w-xs mt-4 text-center">Contact an Account Manager to discuss how we can set this up for you.</h3>
+            <h3 className="leading-relaxed max-w-xs mt-4 text-center">
+              Contact an Account Manager to discuss how we can set this up for
+              you.
+            </h3>
           </div>
         </section>
       </div>
