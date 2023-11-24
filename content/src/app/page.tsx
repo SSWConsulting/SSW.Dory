@@ -27,7 +27,22 @@ export default function Home() {
             height={40}
             priority
           />
-          <ContactButton />
+          <div className="flex flex-col items-center md:flex-row">
+            <a
+              href="https://github.com/SSWConsulting/SSW.Dory"
+              target="_blank"
+              className="hidden mb-3 md:block md:mb-0 md:mr-3"
+            >
+              <ExportedImage
+                src="/github-mark.svg"
+                alt="Invertocat Logo"
+                width={50}
+                height={50}
+                priority
+              />
+            </a>
+            <ContactButton />
+          </div>
         </div>
       </nav>
       <div className="container mx-auto">
@@ -37,20 +52,6 @@ export default function Home() {
               <h1 className="title-font leading-tight sm:text-5xl text-4xl mb-10 font-semibold text-gray-900">
                 Be informed before someone tells you they&apos;re blocked
               </h1>
-            </div>
-            <a href="https://github.com/SSWConsulting/SSW.Dory" target="_blank">
-              <ExportedImage
-                src="/github-mark.svg"
-                alt="Invertocat Logo"
-                width={100}
-                height={100}
-                priority
-              />
-            </a>
-            <div className="lg:flex-grow flex flex-col md:items-start md:text-left items-center text-center">
-              <h3 className="leading-relaxed max-w-xl mt-10">
-                This project is on GitHub.
-              </h3>
             </div>
           </div>
         </section>
