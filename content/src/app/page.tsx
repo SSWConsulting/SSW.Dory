@@ -18,8 +18,8 @@ function ContactButton() {
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <nav className="bggrey w-full h-24 p-4 flex justify-center">
-        <div className="w-full flex justify-between">
+      <nav className="bggrey w-full h-full p-4 flex justify-center">
+        <div className="w-full flex flex-col items-center md:flex-row md:justify-between">
           <ExportedImage
             src="/sswdory-logo.png"
             alt="SSW Dory Logo"
