@@ -58,7 +58,7 @@ jobs:
           parameters: |
             projectName=SSW.Dory
             environment=${{inputs.environment}}
-            tags='{"Deployed": "yes", "cost-category": "value"}'
+            tags="{\"Deployed\":\"yes\", \"cost-category\":\"value\"}"
 
       - name: Deploy Bicep
         id: deploy-bicep
@@ -72,7 +72,7 @@ jobs:
           parameters: |
             projectName=SSW.Dory
             environment=${{inputs.environment}}
-            tags='{"Deployed": "yes", "cost-category": "value"}'
+            tags="{\"Deployed\":\"yes\", \"cost-category\":\"value\"}"
 
       - name: Staging Preview Url
         if: ${{ inputs.environment == 'staging' }}
