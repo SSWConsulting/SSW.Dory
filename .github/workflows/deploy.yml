@@ -55,10 +55,7 @@ jobs:
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
           scope: resourcegroup
           additionalArguments: "--what-if"
-          parameters: |
-            projectName=SSW.Dory
-            environment=${{inputs.environment}}
-            tags="{\"Deployed\":\"yes\", \"cost-category\":\"value\"}"
+          parameters: projectName=SSW.Dory environment=${{inputs.environment}} tags="{\"Deployed\":\"yes\", \"cost-category\":\"value\"}"
 
       - name: Deploy Bicep
         id: deploy-bicep
@@ -69,10 +66,7 @@ jobs:
           resourceGroupName: ${{env.AZURE_RESOURCE_GROUP}}
           subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
           scope: resourcegroup
-          parameters: |
-            projectName=SSW.Dory
-            environment=${{inputs.environment}}
-            tags="{\"Deployed\":\"yes\", \"cost-category\":\"value\"}"
+          parameters: projectName=SSW.Dory environment=${{inputs.environment}} tags="{\"Deployed\":\"yes\", \"cost-category\":\"value\"}"
 
       - name: Staging Preview Url
         if: ${{ inputs.environment == 'staging' }}
