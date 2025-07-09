@@ -2,7 +2,7 @@
 
 ![SSW-Dory-Banner](https://github.com/SSWConsulting/SSW.Dory/assets/41951199/7b70190d-d5d8-4088-b033-deaf081c0453)
 
-SSW.Dory is a solution to keep track of SharePoint files that have been checked out or GitHub Pull Requests that have not been merged. The low-code solution can be found on [Microsoft Power Automate](https://github.com/SSWConsulting/SSW.Dory/wiki/Power-Automate-Flows). This repo holds the SSW.Dory website code in the [contents](https://github.com/SSWConsulting/SSW.Dory/tree/edit-readme-add-wiki/content) folder.
+SSW.Dory is a solution to keep track of SharePoint files that have been checked out or GitHub Pull Requests that have not been merged. The low-code solution can be found on [Microsoft Power Automate](https://github.com/SSWConsulting/SSW.Dory/wiki/Power-Automate-Flows). This repo holds the SSW.Dory website code in the [content](https://github.com/SSWConsulting/SSW.Dory/tree/main/content) folder.
 
 ## See the Important Documents
 
