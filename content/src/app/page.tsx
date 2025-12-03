@@ -57,8 +57,8 @@ export default function Home() {
               className="max-w-full"
               width="560"
               height="315"
-              src="https://www.youtube.com/embed/R2-2icVTie0?si=rT5o62WawDZKDTW5"
-              title="SSWDory Done Video"
+              src="https://www.youtube.com/embed/VY2lP4dUFEQ"
+              title="SSW Dory Done Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             ></iframe>
           </div>
