@@ -38,7 +38,7 @@ jobs:
             subscription-id: ${{ env.SUBSCRIPTION_ID }}
 
         - name: Download all workflow run artifacts
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
             name: out
 
